@@ -55,3 +55,4 @@ complete <- data.table(complete)
 #create tidyData as a data set with average for each activity and subject
 tidyData <- aggregate(. ~Subject + Activity, complete, mean)
 tidyData <- tidyData[order(tidyData$Subject,tidyData$Activity),]
+write.table(tidyData, file = "Tidy.txt", row.names = FALSE)
